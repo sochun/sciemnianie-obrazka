@@ -1,0 +1,47 @@
+:root {
+    --light: 0.1;
+    --glow: 5px;
+}
+
+html {
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url(images/bedroom-1966383.jpg);
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.night {
+    height: 100vh;
+    background-color: black;
+    opacity: calc(1 - var(--light)); /* zmienna */
+}
+
+.neon {
+    font-size: 4rem;
+    color: lightgreen;
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+    letter-spacing: .5rem;
+    text-shadow: rgba(255,255,255, 0.8)0 0 calc(5 * var(--glow)), lightgreen 0 0 40px;
+    opacity: var(--light);
+}
+
+.fa {
+    font-size: 8rem;
+    letter-spacing: 2.5rem;
+}
+
+input {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    top: 30px;
+    left: 30px;
+}

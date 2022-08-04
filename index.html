@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ściemnianie obrazu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="night"></div>
+    <div class="neon"><i class="fa fa-solid fa-lightbulb"></i>Na <span>100</span>%</div>
+    <input type="range" name="neon" min="0" max="100" value="10">
+
+    <script>
+        var input = document.querySelector("input");
+        input.addEventListener("change", updateValue)
+        input.addEventListener("mousemove", updateValue);
+
+        function updateValue() {
+            console.log(this.value);
+            var percent = document.querySelector("span");
+            percent.textContent = this.value;
+            console.log(percent.textContent)
+
+        document.documentElement.style.setProperty("--light", this.value/100)
+
+        document.documentElement.style.setProperty("--glow", this.value/4 + "px")
+        }
+    </script>
+</body>
+</html>
